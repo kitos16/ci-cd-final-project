@@ -11,6 +11,10 @@ From the GitHub **Code** page, press the green **Use this template** button to c
 Name your repo: `ci-cd-final-project`.
 
 
+# ci-cd-final-project
+Proyecto final de integración continua y entrega continua (CI/CD).
+
+
 ## Setup
 
 After entering the lab environment you will need to run the `setup.sh` script in the `./bin` folder to install the prerequisite software.
@@ -26,7 +30,8 @@ exit
 ```
 
 ## Tasks
-
+- Nose
+- Cleanup
 
 ## License
 
