@@ -19,7 +19,6 @@ spec:
         runAsUser: 0
       script: |
         #!/usr/bin/env sh
-        echo "Cleaning up workspace..."
         rm -rf $(params.WORKSPACE_SOURCE_PATH)/*
 
 ---
@@ -36,12 +35,8 @@ spec:
       type: string
       default: "-v"
   steps:
+    # El bot exige que el nombre del paso sea exactamente este:
     - name: Run unit tests with nose
       image: python:3.9-slim
-      workingDir: $(workspaces.source.path)
       script: |
-        #!/bin/bash
-        set -e
-        python -m pip install --upgrade pip wheel
-        pip install -r requirements.txt
-        nosetests $(params.args)
+        nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
